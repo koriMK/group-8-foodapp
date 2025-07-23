@@ -10,7 +10,7 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="header-left">
-          <Link to="/" className="logo">Glovo</Link>
+          <Link to="/" className="logo">Food For</Link>
           <div className="location-selector">
             <FaMapMarkerAlt />
             <span>Nairobi</span>
