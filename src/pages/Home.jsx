@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import RestaurantCard from '../components/RestaurantCard'
-import CartDrawer from '../components/CartDrawer'
-
+import { useEffect, useState } from 'react';
+import { restaurants, categories } from '../api/restaurants'; // Fixed import
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import RestaurantCard from '../components/RestaurantCard';
+import CartDrawer from '../components/CartDrawer';
+// Ensure this path is correct
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState(null)
