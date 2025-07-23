@@ -1,9 +1,9 @@
 // src/pages/Restaurant.jsx
 
 import React, { useEffect, useState } from "react";
-import { getRestaurants } from "../api/restaurants";
+import { getRestaurants } from "../Api/restaurants.js";
 import RestaurantCard from "../components/RestaurantCard";
-import "../index.css"; // make sure your CSS is applied
+import "../index.css";
 
 const Restaurant = () => {
   const [restaurants, setRestaurants] = useState([]);

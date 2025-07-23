@@ -1,4 +1,4 @@
-// src/api/restaurants.js
+// src/Api/restaurants.js
 
 export const getRestaurants = async () => {
   return [

@@ -2,12 +2,29 @@ import { useEffect, useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import RestaurantCard from '../components/RestaurantCard'
-import CartDrawer from '../components/CartDrawer'
+import { getRestaurants } from '../Api/restaurants.js'
+
+// Sample categories data
+const categories = [
+  { id: 1, name: 'Fast Food', image: 'https://via.placeholder.com/150' },
+  { id: 2, name: 'Cafe', image: 'https://via.placeholder.com/150' },
+  { id: 3, name: 'Bakery', image: 'https://via.placeholder.com/150' },
+  { id: 4, name: 'Local', image: 'https://via.placeholder.com/150' }
+];
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState(null)
-  const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants)
+  const [restaurants, setRestaurants] = useState([])
+  const [filteredRestaurants, setFilteredRestaurants] = useState([])
+
+  useEffect(() => {
+    // Fetch restaurants when component mounts
+    getRestaurants().then(data => {
+      setRestaurants(data);
+      setFilteredRestaurants(data);
+    });
+  }, []);
 
   useEffect(() => {
     let results = restaurants
@@ -18,11 +35,11 @@ const Home = () => {
     }
     if (selectedCategory) {
       results = results.filter((r) =>
-        r.categories.some((c) => c === selectedCategory)
+        r.cuisine === selectedCategory
       )
     }
     setFilteredRestaurants(results)
-  }, [searchTerm, selectedCategory])
+  }, [searchTerm, selectedCategory, restaurants])
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -81,7 +98,6 @@ const Home = () => {
         </div>
       </main>
       <Footer />
-      <CartDrawer />
     </div>
   )
 }
