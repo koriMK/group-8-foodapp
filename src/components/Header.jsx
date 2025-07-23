@@ -6,13 +6,13 @@ const Header = () => {
   const { totalItems, setIsCartOpen } = useCart()
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center space-x-6">
-          <Link to="/" className="text-2xl font-bold text-[var(--primary)]">
+    <header className="header">
+      <div className="container">
+        <div className="header-left">
+          <Link to="/" className="logo">
             Food For
           </Link>
-          <div className="hidden md:flex items-center space-x-1 text-gray-600 cursor-pointer">
+          <div className="location-selector">
             <FaMapMarkerAlt />
             <span className="font-medium">Nairobi</span>
           </div>

@@ -1,7 +1,7 @@
 // src/pages/Restaurant.jsx
 
 import React, { useEffect, useState } from "react";
-import { getRestaurants } from "../api/restaurants";
+import { getRestaurants } from "../Api/restaurants";
 import RestaurantCard from "../components/RestaurantCard";
 import "../index.css"; // make sure your CSS is applied
 

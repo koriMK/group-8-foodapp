@@ -1,7 +1,6 @@
 import React from 'react'
 import Home from './pages/Home'
 import Restaurant from './pages/Restaurant'
-import Checkout from './pages/Checkout'
 import { CartProvider } from './context/cartContext'
 
 function App() {
