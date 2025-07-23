@@ -35,7 +35,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p>© 2023 Glovo Clone. All rights reserved</p>
+          <p>© 2023 Food for. All rights reserved</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <span className="hover:text-[var(--primary)] cursor-pointer">Terms</span>
             <span className="hover:text-[var(--primary)] cursor-pointer">Privacy</span>
