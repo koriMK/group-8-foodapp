@@ -1,0 +1,199 @@
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #00a082;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.logo:hover {
+  color: #008a6e;
+}
+
+.locationSelector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #555;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.locationSelector:hover {
+  color: #00a082;
+}
+
+.locationSelector svg {
+  font-size: 1.2rem;
+}
+
+.headerCenter {
+  flex: 1;
+  max-width: 500px;
+  margin: 0 2rem;
+}
+
+.searchBar {
+  position: relative;
+  width: 100%;
+}
+
+.searchBar input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 3rem;
+  border-radius: 2rem;
+  border: 1px solid #e0e0e0;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.searchBar input:focus {
+  border-color: #00a082;
+  box-shadow: 0 0 0 3px rgba(0, 160, 130, 0.1);
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 1.1rem;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.btnLogin, .btnCart, .btnMenu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  transition: all 0.2s ease;
+}
+
+.btnLogin:hover, .btnCart:hover {
+  color: #00a082;
+}
+
+.btnLogin {
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.btnCart {
+  position: relative;
+  padding: 0.6rem;
+}
+
+.cartIcon {
+  font-size: 1.3rem;
+}
+
+.cartCount {
+  position: absolute;
+  top: -0.3rem;
+  right: -0.3rem;
+  background-color: #ff8000;
+  color: white;
+  border-radius: 50%;
+  width: 1.3rem;
+  height: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.btnMenu {
+  display: none;
+  padding: 0.6rem;
+}
+
+.menuIcon {
+  font-size: 1.5rem;
+}
+
+
+@media (max-width: 992px) {
+  .headerCenter {
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .headerLeft {
+    order: 1;
+  }
+
+  .headerCenter {
+    order: 3;
+    width: 100%;
+    margin: 0;
+  }
+
+  .headerRight {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .btnMenu {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .locationSelector span {
+    display: none;
+  }
+
+  .btnLogin span {
+    display: none;
+  }
+}

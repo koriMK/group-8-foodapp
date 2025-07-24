@@ -1,5 +1,6 @@
-import { useCart } from '../context/cartContext';
-import { FaTimes, FaMinus, FaPlus } from 'react-icons/fa';
+import { FaTimes, FaShoppingBag } from 'react-icons/fa'
+import { useCart } from '../context/cartContext'
+import './CartDrawer.css'
 
 const CartDrawer = () => {
   const { 
