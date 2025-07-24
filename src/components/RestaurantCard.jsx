@@ -1,20 +1,20 @@
 // src/components/RestaurantCard.jsx
 
 import React from "react";
+import "./RestaurantCard.css";
 
 const RestaurantCard = ({ restaurant }) => {
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden hover:scale-105 transition">
+    <div className="restaurant-card">
       <img
         src={restaurant.image}
         alt={restaurant.name}
-        className="w-full h-40 object-cover"
       />
-      <div className="p-4">
-        <h2 className="text-lg font-semibold">{restaurant.name}</h2>
-        <p className="text-sm text-gray-600">{restaurant.cuisine}</p>
-        <p className="text-sm text-yellow-500 mt-1">⭐ {restaurant.rating}</p>
-        <button className="mt-2 bg-yellow-400 hover:bg-yellow-500 text-white px-4 py-2 rounded">
+      <div className="restaurant-card-content">
+        <h2>{restaurant.name}</h2>
+        <p className="cuisine">{restaurant.cuisine}</p>
+        <p className="rating">⭐ {restaurant.rating}</p>
+        <button>
           View Menu
         </button>
       </div>
