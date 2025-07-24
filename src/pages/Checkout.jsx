@@ -26,13 +26,13 @@ function Checkout() {
             paymentMethod: ''
         })
     }
-
     return (
         <div style={{
-            backgroundColor: '#FFDA03',
+            //backgroundColor: '#FFDA03',
             padding: '40px',
             borderRadius: '30px',
-            color: 'red',
+            color: 'green',
+
             width: '95vw',
         }}>
 
@@ -67,24 +67,23 @@ function Checkout() {
                 }}>ORDER UP !!!</button>
             </form>
 
-            {orders.length > 0 && (
-                <div>
-                    {orders.map((order, idx) => (
-                        <div key={idx} style={{
-                            backgroundColor: '#CBA135',
-                            padding: '20px',
-                            borderRadius: '10px',
-                            margin: '20px',
-                            color: 'black'
-                        }}>
-                            <h3>Your Order is on the way</h3>
-                            <p><strong>Name: </strong>{order.name}</p>
-                            <p><strong>Address: </strong>{order.address}</p>
-                            <p><strong>Payment Method: </strong>{order.paymentMethod}</p>
-                        </div>
-                    ))}
-                </div>
-            )}
+            <div>
+                {orders.map((order, idx) => (
+                    <div key={idx} style={{
+                        backgroundColor: 'green',
+                        padding: '20px',
+                        borderRadius: '10px',
+                        margin: '20px',
+                        color: 'black'
+                    }}>
+                        <h3>Your Order is on the way</h3>
+                        <p><strong>Name: </strong>{order.name}</p>
+                        <p><strong>Address: </strong>{order.address}</p>
+                        <p><strong>Payment Method: </strong>{order.paymentMethod}</p>
+                    </div>
+                ))}
+            </div>
+
         </div >
     )
 }
