@@ -11,6 +11,10 @@ const Home = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants)
 
   useEffect(() => {
+    setFilteredRestaurants(restaurants);
+  }, []);
+
+  useEffect(() => {
     let results = restaurants
     if (searchTerm) {
       results = results.filter((r) =>
@@ -19,11 +23,11 @@ const Home = () => {
     }
     if (selectedCategory) {
       results = results.filter((r) =>
-        r.categories.some((c) => c === selectedCategory)
+        r.cuisine === selectedCategory
       )
     }
     setFilteredRestaurants(results)
-  }, [searchTerm, selectedCategory])
+  }, [searchTerm, selectedCategory, restaurants])
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -82,7 +86,6 @@ const Home = () => {
         </div>
       </main>
       <Footer />
-      <CartDrawer />
     </div>
   )
 }
