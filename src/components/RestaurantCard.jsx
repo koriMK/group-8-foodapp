@@ -1,4 +1,4 @@
-// src/components/RestaurantCard.jsx
+
 
 import React from "react";
 
