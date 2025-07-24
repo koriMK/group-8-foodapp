@@ -1,4 +1,4 @@
-import { useCart } from '../context/CartContext'
+import { useCart } from '../context/cartContext'
 
 const MenuItemCard = ({ item }) => {
   const { addToCart } = useCart()

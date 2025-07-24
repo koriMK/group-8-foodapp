@@ -1,25 +1,21 @@
-// src/pages/Restaurant.jsx
-
-import React, { useEffect, useState } from "react";
-import { getRestaurants } from "../Api/restaurants.js";
-import RestaurantCard from "../components/RestaurantCard";
-import "../index.css";
+import { useParams } from 'react-router-dom';
+import { getRestaurantById } from '../api/restaurants';  // Correct import
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import MenuItemCard from '../components/MenuItemCard';
+import CartDrawer from '../components/CartDrawer';
 
 const Restaurant = () => {
-  const [restaurants, setRestaurants] = useState([]);
+  const { id } = useParams();
+  const restaurant = getRestaurantById(id);  // Now using correct function
 
-  useEffect(() => {
-    getRestaurants().then(setRestaurants);
-  }, []);
+  if (!restaurant) {
+    return <div>Restaurant not found</div>;
+  }
 
   return (
-    <div className="restaurant-page">
-      <h1 className="restaurant-title">Top Picks in Nairobi</h1>
-      <div className="restaurant-grid">
-        {restaurants.map((r) => (
-          <RestaurantCard key={r.id} restaurant={r} />
-        ))}
-      </div>
+    <div className="min-h-screen flex flex-col">
+      {/* ... rest of your component ... */}
     </div>
   );
 };

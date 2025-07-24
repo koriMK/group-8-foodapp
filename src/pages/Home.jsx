@@ -1,29 +1,17 @@
-import { useEffect, useState } from 'react'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import RestaurantCard from '../components/RestaurantCard'
-import { getRestaurants } from '../Api/restaurants.js'
-
-// Sample categories data
-const categories = [
-  { id: 1, name: 'Fast Food', image: 'https://via.placeholder.com/150' },
-  { id: 2, name: 'Cafe', image: 'https://via.placeholder.com/150' },
-  { id: 3, name: 'Bakery', image: 'https://via.placeholder.com/150' },
-  { id: 4, name: 'Local', image: 'https://via.placeholder.com/150' }
-];
-
+import { useEffect, useState } from 'react';
+import { restaurants, categories } from '../api/restaurants'; // Fixed import
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import RestaurantCard from '../components/RestaurantCard';
+import CartDrawer from '../components/CartDrawer';
+// Ensure this path is correct
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState(null)
-  const [restaurants, setRestaurants] = useState([])
-  const [filteredRestaurants, setFilteredRestaurants] = useState([])
+  const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants)
 
   useEffect(() => {
-    // Fetch restaurants when component mounts
-    getRestaurants().then(data => {
-      setRestaurants(data);
-      setFilteredRestaurants(data);
-    });
+    setFilteredRestaurants(restaurants);
   }, []);
 
   useEffect(() => {
