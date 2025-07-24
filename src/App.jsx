@@ -1,21 +1,21 @@
-import { useState } from 'react'
-import Checkout from './pages/Checkout'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Restaurant from './pages/Restaurant';
+import Checkout from './pages/Checkout';
+import { CartProvider } from './context/cartContext';
 
 function App() {
-  //const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div className='text'>
-        <h1 style={{color:'black'}}>FOOD APP CHECKOUT</h1>
-      </div>
-
-      <div className='checkout'>
-        <Checkout />
-      </div>
-    </>
-  )
+    <CartProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/restaurant/:id" element={<Restaurant />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
+      </Router>
+    </CartProvider>
+  );
 }
 
-export default App
+export default App;

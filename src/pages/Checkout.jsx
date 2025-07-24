@@ -32,6 +32,7 @@ function Checkout() {
             padding: '40px',
             borderRadius: '30px',
             color: 'green',
+
             width: '95vw',
         }}>
 
@@ -41,7 +42,7 @@ function Checkout() {
 
             <form onSubmit={handleSubmit}>
                 <section style={{
-                    //backgroundColor: '#CBA135',
+                    backgroundColor: '#CBA135',
                     padding: '40px',
                     borderRadius: '10px',
                 }}>
@@ -82,6 +83,7 @@ function Checkout() {
                     </div>
                 ))}
             </div>
+
         </div >
     )
 }
